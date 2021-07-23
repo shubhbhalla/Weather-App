@@ -25,7 +25,6 @@ const SignIn = () => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((userCred) => {
-        setLoading(false);
         setUser({
           email: '',
           password: '',
