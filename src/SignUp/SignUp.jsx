@@ -15,7 +15,7 @@ const SignUp = () => {
     confirmPassword: '',
   });
 
-  const { getUserData } = useContext(MainContext);
+  const { getUserData, setLoading } = useContext(MainContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,6 +31,8 @@ const SignUp = () => {
       alert('passwords should be atleast 6 characters');
       return;
     }
+
+    setLoading(true);
 
     // how do i fix this asynchronous problem when the user first signs in?
     auth
@@ -51,7 +53,8 @@ const SignUp = () => {
         } else {
           console.log(error);
         }
-      });
+      })
+      .finally(() => setLoading(false));
   };
 
   const handleChange = (e) => {

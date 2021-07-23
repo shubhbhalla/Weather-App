@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 import { Button, TextField } from '@material-ui/core';
 
 import { auth, signInWithGoogle } from '../firebase';
+import { MainContext } from '../MainContext';
 
 import {
   ButtonContainer,
@@ -12,15 +13,19 @@ import {
 
 const SignIn = () => {
   const [user, setUser] = useState({ email: '', password: '' });
+  const { setLoading } = useContext(MainContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    setLoading(true);
 
     const { email, password } = user;
 
     auth
       .signInWithEmailAndPassword(email, password)
       .then((userCred) => {
+        setLoading(false);
         setUser({
           email: '',
           password: '',
@@ -28,6 +33,7 @@ const SignIn = () => {
       })
       .catch((e) => {
         alert('Wrong email and password combination');
+        setLoading(false);
       });
   };
 

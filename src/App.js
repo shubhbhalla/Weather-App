@@ -5,10 +5,12 @@ import Login from './Login';
 import { auth, createUserProfileDocument } from './firebase';
 import { MainContext } from './MainContext';
 import { getUserData } from './AppUtils';
+import Spinner from './spinner/spinner.component';
 
 const App = () => {
   const [user, setUser] = useState(null);
   const [weatherData, setWeatherData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getCityData = (city) => {
     const cityLowerCase = city.toLowerCase();
@@ -56,6 +58,7 @@ const App = () => {
           );
 
         if (!user) getUserData(setUser)(uid);
+        setLoading(false);
       } else {
         setUser(null);
       }
@@ -79,11 +82,12 @@ const App = () => {
         getCityData,
         weatherData,
         signOut,
+        setLoading,
         email: user && user.email,
         getUserData: getUserData(setUser),
       }}
     >
-      {user ? <UserHome /> : <Login />}
+      {loading ? <Spinner /> : user ? <UserHome /> : <Login />}
     </MainContext.Provider>
   );
 };

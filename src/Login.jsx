@@ -14,6 +14,11 @@ const LoginContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin: 30px auto;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export default Login;
