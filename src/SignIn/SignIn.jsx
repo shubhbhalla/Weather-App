@@ -68,7 +68,14 @@ const SignIn = () => {
         />
         <ButtonContainer>
           <Button type="submit">Sign In</Button>
-          <Button color="primary" type="button" onClick={signInWithGoogle}>
+          <Button
+            color="primary"
+            type="button"
+            onClick={() => {
+              setLoading(true);
+              signInWithGoogle();
+            }}
+          >
             Sign In With Google
           </Button>
         </ButtonContainer>

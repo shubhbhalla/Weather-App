@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import PreviousHistory from './PreviousHistory';
-import Header from './Header';
+import Header from './Header/header.component';
 
 const UserHomeContainer = styled.div`
   display: flex;

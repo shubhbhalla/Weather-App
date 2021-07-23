@@ -13,6 +13,7 @@ const PreviousHistory = () => {
         flexWrap: 'wrap',
         justifyContent: 'space-evenly',
         alignItems: 'center',
+        marginBottom: '20px',
       }}
     >
       {weatherData.map((data, i) => (
