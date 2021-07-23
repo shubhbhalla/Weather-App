@@ -53,8 +53,8 @@ const SignUp = () => {
         } else {
           console.log(error);
         }
-      })
-      .finally(() => setLoading(false));
+        setLoading(false);
+      });
   };
 
   const handleChange = (e) => {

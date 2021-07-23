@@ -10,7 +10,7 @@ import Spinner from './spinner/spinner.component';
 const App = () => {
   const [user, setUser] = useState(null);
   const [weatherData, setWeatherData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const getCityData = (city) => {
     const cityLowerCase = city.toLowerCase();
@@ -58,10 +58,10 @@ const App = () => {
           );
 
         if (!user) getUserData(setUser)(uid);
-        setLoading(false);
       } else {
         setUser(null);
       }
+      setLoading(false);
     });
   }, []);
 
