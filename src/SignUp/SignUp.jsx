@@ -37,8 +37,8 @@ const SignUp = () => {
     // how do i fix this asynchronous problem when the user first signs in?
     auth
       .createUserWithEmailAndPassword(email, password)
-      .then((userCred) => {
-        createUserProfileDocument(userCred.user, name, getUserData);
+      .then(async (userCred) => {
+        await createUserProfileDocument(userCred.user, name, getUserData);
 
         setUser({
           name: '',
@@ -53,8 +53,8 @@ const SignUp = () => {
         } else {
           console.log(error);
         }
-      })
-      .finally(() => setLoading(false));
+        setLoading(false);
+      });
   };
 
   const handleChange = (e) => {
