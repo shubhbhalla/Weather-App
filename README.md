@@ -1,7 +1,5 @@
 # Weather-App
 
-## This project was made for a coding assignment given by [Orange Topi](https://www.orangetopi.com/).
-
 - Used [Firebase Auth](https://firebase.google.com/products/auth) for authentication of users.
 - Used [Firebase Firestore](https://firebase.google.com/products/firestore) for data persistance.
 - Used [Styled components](https://styled-components.com/) for css styling.
