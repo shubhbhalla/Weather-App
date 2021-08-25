@@ -33,7 +33,7 @@ export const styles = (muiBaseTheme) => ({
 });
 
 export const getImageUrl = (url, callback) => {
-  fetch(`https://weather-app-backend-project.herokuapp.com/image/${url}`)
+  fetch(`https://weather-app-backend-v2.herokuapp.com/image/${url}`)
     .then((res) => res.json())
     .then((res) => {
       if (res.photos) {
@@ -58,7 +58,7 @@ export const getDataForChart = async (lat, long) => {
   const yesterdayTimeEpoch = moment().subtract(1, 'days').unix();
 
   const firstCall = await fetch(
-    `https://weather-app-backend-project.herokuapp.com/weather/history/${yesterdayTimeEpoch}/${lat}/${long}`
+    `https://weather-app-backend-v2.herokuapp.com/weather/history/${yesterdayTimeEpoch}/${lat}/${long}`
   );
   const data = await firstCall.json();
 
