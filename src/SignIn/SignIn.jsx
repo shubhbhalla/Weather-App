@@ -57,6 +57,7 @@ const SignIn = () => {
           onChange={handleChange}
           label="email"
           required
+          autoComplete="username"
         />
         <TextField
           name="password"
@@ -65,6 +66,7 @@ const SignIn = () => {
           onChange={handleChange}
           label="password"
           required
+          autoComplete="current-password"
         />
         <ButtonContainer>
           <Button type="submit">Sign In</Button>
