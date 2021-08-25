@@ -45,6 +45,9 @@ const App = () => {
   // how do i fix the dependecy array problem ?
 
   useEffect(() => {
+    fetch(`https://weather-app-backend-v2.herokuapp.com/startserver`).then(
+      (res) => (res.status === 200 ? console.log('started server') : res.text())
+    );
     return auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         const { uid } = authUser;

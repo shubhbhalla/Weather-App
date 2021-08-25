@@ -28,7 +28,7 @@ const WeatherContainer = ({
     name,
     timezone,
     description: weather[0].main,
-    iconURL: `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`,
+    iconURL: `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`,
     time: null,
   };
 
