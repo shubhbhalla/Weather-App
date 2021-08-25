@@ -25,7 +25,7 @@ const App = () => {
     }
 
     fetch(
-      `https://weather-app-backend-v2.herokuapp.com//weather/${cityLowerCase}/${user.uid}`
+      `https://weather-app-backend-v2.herokuapp.com/weather/${cityLowerCase}/${user.uid}`
     )
       .then((res) => res.json())
       .then((result) => {
